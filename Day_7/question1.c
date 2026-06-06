@@ -1,9 +1,17 @@
-// 1. Recursive Factorial
+#include <stdio.h>
 
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    return n * factorial(n - 1)
 
-n = int(input("Enter a number: "))
-print("Factorial =", factorial(n))
+int factorial(int n) {
+    
+    if (n <= 1) {
+        return 1;
+    }
+    
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 5;
+    printf("Factorial of %d is %d\n", num, factorial(num)); // Output: 120
+    return 0;
+}

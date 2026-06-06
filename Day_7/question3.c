@@ -1,8 +1,14 @@
-// 3. Recursive Sum of Digits
-def sum_of_digits(n):
-    if n == 0:
-        return 0
-    return n % 10 + sum_of_digits(n // 10)
+#include <stdio.h>
 
-n = int(input("Enter a number: "))
-print("Sum of digits =", sum_of_digits(n))
+int sum_of_digits(int n) {
+    if (n < 10) {
+        return n;
+    }
+    return (n % 10) + sum_of_digits(n / 10);
+}
+
+int main() {
+    int number = 1234;
+    printf("Sum of digits of %d is %d\n", number, sum_of_digits(number)); // Output: 10
+    return 0;
+}

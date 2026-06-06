@@ -1,11 +1,16 @@
-// 2. Recursive Fibonacci
+#include <stdio.h>
 
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+int fibonacci(int n) {
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
-n = int(input("Enter number of terms: "))
-
-for i in range(n):
-    print(fibonacci(i), end=" ")
+int main() {
+    int position = 6;
+    printf("The %dth Fibonacci number is %d\n", position, fibonacci(position)); 
+    return 0;
+}

@@ -1,9 +1,17 @@
-// 4. Recursive Reverse Number
+#include <stdio.h>
 
-def reverse_number(n, rev=0):
-    if n == 0:
-        return rev
-    return reverse_number(n // 10, rev * 10 + n % 10)
+int reverse_number(int n, int new_reverse) {
+  
+    if (n == 0) {
+        return new_reverse;
+    }
+    return reverse_number(n / 10, new_reverse * 10 + n % 10);
+}
 
-n = int(input("Enter a number: "))
-print("Reversed number =", reverse_number(n))
+int main() {
+    int number = 1234;
+
+    int reversed = reverse_number(number, 0);
+    printf("Reverse of %d is %d\n", number, reversed); 
+    return 0;
+}
