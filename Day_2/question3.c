@@ -1,5 +1,3 @@
-// 3. Product of Digits
-
 #include <stdio.h>
 
 int main() {

@@ -1,5 +1,3 @@
-// 1. Sum of Digits of a Number
-
 #include <stdio.h>
 
 int main() {

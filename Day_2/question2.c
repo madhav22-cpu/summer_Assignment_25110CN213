@@ -1,5 +1,3 @@
-// 2. Reverse a Number
-
 #include <stdio.h>
 
 int main() {
