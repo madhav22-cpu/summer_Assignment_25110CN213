@@ -1,19 +1,27 @@
-num = int(input("Enter a number: "))
+#include <stdio.h>
 
-largest_prime = -1
+int main() {
+    int n, largestPrime = -1;
 
-while num % 2 == 0:
-    largest_prime = 2
-    num //= 2
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-factor = 3
-while factor * factor <= num:
-    while num % factor == 0:
-        largest_prime = factor
-        num //= factor
-    factor += 2
+    while (n % 2 == 0) {
+        largestPrime = 2;
+        n /= 2;
+    }
 
-if num > 2:
-    largest_prime = num
+    for (int i = 3; i * i <= n; i += 2) {
+        while (n % i == 0) {
+            largestPrime = i;
+            n /= i;
+        }
+    }
 
-print("Largest Prime Factor =", largest_prime)
+    if (n > 2)
+        largestPrime = n;
+
+    printf("Largest Prime Factor = %d\n", largestPrime);
+
+    return 0;
+}

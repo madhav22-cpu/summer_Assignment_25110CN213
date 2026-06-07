@@ -1,7 +1,18 @@
-num = int(input("Enter a number: "))
+#include <stdio.h>
 
-print("Factors of", num, "are:")
+int main() {
+    int n;
 
-for i in range(1, num + 1):
-    if num % i == 0:
-        print(i, end=" ")
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    printf("Factors are: ");
+
+    for(int i = 1; i <= n; i++) {
+        if(n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}

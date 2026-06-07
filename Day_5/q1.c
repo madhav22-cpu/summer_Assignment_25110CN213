@@ -1,12 +1,21 @@
-num = int(input("Enter a number: "))
+#include <stdio.h>
 
-sum_div = 0
+int main() {
+    int n, sum = 0;
 
-for i in range(1, num):
-    if num % i == 0:
-        sum_div += i
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-if sum_div == num:
-    print(num, "is a Perfect Number")
-else:
-    print(num, "is not a Perfect Number")
+    for(int i = 1; i <= n / 2; i++) {
+        if(n % i == 0) {
+            sum += i;
+        }
+    }
+
+    if(sum == n)
+        printf("Perfect Number");
+    else
+        printf("Not a Perfect Number");
+
+    return 0;
+}

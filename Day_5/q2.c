@@ -1,18 +1,29 @@
-num = int(input("Enter a number: "))
-temp = num
-sum_fact = 0
+#include <stdio.h>
 
-while temp > 0:
-    digit = temp % 10
+int main() {
+    int n, temp, digit, sum = 0;
 
-    fact = 1
-    for i in range(1, digit + 1):
-        fact *= i
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    sum_fact += fact
-    temp //= 10
+    temp = n;
 
-if sum_fact == num:
-    print(num, "is a Strong Number")
-else:
-    print(num, "is not a Strong Number")
+    while (temp > 0) {
+        digit = temp % 10;
+
+        int fact = 1;
+        for (int i = 1; i <= digit; i++) {
+            fact *= i;
+        }
+
+        sum += fact;
+        temp /= 10;
+    }
+
+    if (sum == n)
+        printf("Strong Number");
+    else
+        printf("Not a Strong Number");
+
+    return 0;
+}
