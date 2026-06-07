@@ -1,26 +1,30 @@
-// 4. Print Armstrong Numbers in a Range
+#include <stdio.h>
+#include <math.h>
 
-def is_armstrong(num):
-    digits = len(str(num))
-    temp = num
-    total = 0
+int main() {
+    int start, end;
 
-    while temp > 0:
-        digit = temp % 10
-        total += digit ** digits
-        temp //= 10
+    printf("Enter start and end: ");
+    scanf("%d %d", &start, &end);
 
-    return total == num
+    for (int num = start; num <= end; num++) {
+        int temp = num, digits = 0, sum = 0;
 
+        while (temp > 0) {
+            digits++;
+            temp /= 10;
+        }
 
-def armstrong_range(start, end):
-    print("Armstrong Numbers:")
-    for num in range(start, end + 1):
-        if is_armstrong(num):
-            print(num)
+        temp = num;
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += pow(digit, digits);
+            temp /= 10;
+        }
 
+        if (sum == num)
+            printf("%d ", num);
+    }
 
-start = int(input("Enter start of range: "))
-end = int(input("Enter end of range: "))
-
-armstrong_range(start, end)
+    return 0;
+}

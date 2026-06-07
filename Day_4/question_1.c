@@ -1,13 +1,17 @@
-// Generate Fibonacci Series
+#include <stdio.h>
 
-def fibonacci_series(n):
-    a, b = 0, 1
+int main() {
+    int n, a = 0, b = 1, c;
 
-    print("Fibonacci Series:")
-    for _ in range(n):
-        print(a, end=" ")
-        a, b = b, a + b
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
 
+    for(int i = 1; i <= n; i++) {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
 
-n = int(input("Enter number of terms: "))
-fibonacci_series(n)
+    return 0;
+}

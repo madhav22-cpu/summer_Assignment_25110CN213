@@ -1,18 +1,24 @@
-//2. Find nth Fibonacci Term
 
-def nth_fibonacci(n):
-    a, b = 0, 1
+#include <stdio.h>
 
-    if n == 1:
-        return a
-    elif n == 2:
-        return b
+int main() {
+    int n, a = 0, b = 1, c;
 
-    for _ in range(3, n + 1):
-        a, b = b, a + b
+    printf("Enter n: ");
+    scanf("%d", &n);
 
-    return b
+    if (n == 1)
+        printf("%d", a);
+    else if (n == 2)
+        printf("%d", b);
+    else {
+        for (int i = 3; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        printf("%d", b);
+    }
 
-
-n = int(input("Enter n: "))
-print(f"{n}th Fibonacci term =", nth_fibonacci(n))
+    return 0;
+}

@@ -1,21 +1,31 @@
-// 3. Check Armstrong Number
+#include <stdio.h>
+#include <math.h>
 
-def is_armstrong(num):
-    digits = len(str(num))
-    temp = num
-    total = 0
+int main() {
+    int n, temp, digits = 0;
+    int sum = 0;
 
-    while temp > 0:
-        digit = temp % 10
-        total += digit ** digits
-        temp //= 10
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    return total == num
+    temp = n;
 
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
 
-num = int(input("Enter a number: "))
+    temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum += pow(digit, digits);
+        temp /= 10;
+    }
 
-if is_armstrong(num):
-    print(num, "is an Armstrong Number")
-else:
-    print(num, "is not an Armstrong Number")
+    if (sum == n)
+        printf("Armstrong Number");
+    else
+        printf("Not an Armstrong Number");
+
+    return 0;
+}
