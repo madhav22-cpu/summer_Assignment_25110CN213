@@ -1,10 +1,20 @@
-binary = input("Enter a binary number: ")
+#include <stdio.h>
+#include <math.h>
 
-decimal = 0
-power = 0
+int main() {
+    long long binary;
+    int decimal = 0, i = 0, remainder;
 
-for digit in reversed(binary):
-    decimal += int(digit) * (2 ** power)
-    power += 1
+    printf("Enter a binary number: ");
+    scanf("%lld", &binary);
 
-print("Decimal =", decimal)
+    while (binary != 0) {
+        remainder = binary % 10;
+        decimal += remainder * pow(2, i);
+        binary /= 10;
+        i++;
+    }
+
+    printf("Decimal = %d\n", decimal);
+    return 0;
+}

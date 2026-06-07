@@ -1,9 +1,15 @@
-x = int(input("Enter base (x): "))
-n = int(input("Enter exponent (n): "))
+#include <stdio.h>
 
-result = 1
+int main() {
+    int x, n;
+    long long result = 1;
 
-for i in range(n):
-    result *= x
+    printf("Enter x and n: ");
+    scanf("%d %d", &x, &n);
 
-print(f"{x}^{n} =", result)
+    for(int i = 1; i <= n; i++) {
+        result *= x;
+    }
+    printf("%d^%d = %lld\n", x, n, result);
+    return 0;
+}

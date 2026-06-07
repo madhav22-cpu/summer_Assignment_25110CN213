@@ -1,10 +1,17 @@
-num = int(input("Enter a number: "))
+#include <stdio.h>
 
-count = 0
+int main() {
+    int n, count = 0;
 
-while num > 0:
-    if num % 2 == 1:
-        count += 1
-    num //= 2
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-print("Number of set bits =", count)
+    while (n > 0) {
+        if (n % 2 == 1)
+            count++;
+        n /= 2;
+    }
+    printf("Number of set bits = %d\n", count);
+
+    return 0;
+}

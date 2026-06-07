@@ -1,12 +1,26 @@
-num = int(input("Enter a decimal number: "))
+#include <stdio.h>
 
-binary = ""
+int main() {
+    int num, binary[32], i = 0;
 
-if num == 0:
-    binary = "0"
-else:
-    while num > 0:
-        binary = str(num % 2) + binary
-        num //= 2
+    printf("Enter a decimal number: ");
+    scanf("%d", &num);
 
-print("Binary =", binary)
+    if (num == 0) {
+        printf("Binary: 0 ");
+        return 0;
+    }
+
+    while (num > 0) {
+        binary[i] = num % 2;
+        num = num / 2;
+        i++;
+    }
+    printf("Binary: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+
+    printf("\n");
+    return 0;
+}
