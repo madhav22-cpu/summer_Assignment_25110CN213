@@ -1,14 +1,23 @@
-// Find LCM of Two Numbers
+#include <stdio.h>
 
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
+int main() {
+    int a, b, x, y, gcd;
 
-x, y = a, b
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
 
-while y != 0:
-    x, y = y, x % y
+    x = a;
+    y = b;
 
-gcd = x
-lcm = (a * b) // gcd
+    while (y != 0) {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
 
-print("LCM =", lcm)
+    gcd = x;
+
+    printf("LCM = %d", (a * b) / gcd);
+
+    return 0;
+}

@@ -1,9 +1,18 @@
-// Find GCD of Two Numbers
+#include <stdio.h>
 
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
+int main() {
+    int a, b, temp;
 
-while b != 0:
-    a, b = b, a % b
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
 
-print("GCD =", a)
+    while (b != 0) {
+        temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    printf("GCD = %d", a);
+
+    return 0;
+}
